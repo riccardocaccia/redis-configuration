@@ -8,11 +8,13 @@ sudo apt install redis-server -y
 ```
 
 Modify the configuration file:
-Bash
 
+```bash
 sudo nano /etc/redis/redis.conf
+```
 
 Add or update the following parameters:
+
 ```bash
     bind 0.0.0.0 (per accettare connessioni da altre VM)
 
@@ -47,4 +49,6 @@ ACL SETUSER agente2 on >secret_agente2 ~rq:queue:coda_agente2* +@all -@admin
 ACL SETUSER agente_aws on >secret_aws ~rq:queue:coda_aws* +@all -@admin
 ```
 # Salva la configurazione
+```bash
 ACL save
+```
